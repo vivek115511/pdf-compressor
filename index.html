@@ -2,62 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZipPDF | Ultra-Fast 150MB Compressor</title>
+    <title>ZipPDF | 18MB to 2MB Fast</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 </head>
 <body>
-    <!-- TOP BANNER AD -->
-    <div class="ad-unit banner-top">
-        <p>SPONSORED AD</p>
-        <!-- Paste AdSense Code Here -->
-    </div>
 
-    <main class="main-wrapper">
-        <div class="compressor-card">
-            <h1>Ultra PDF Compressor</h1>
-            
-            <div id="setup-area">
-               <select id="target-size" class="big-select">
-    <option value="0.5">🔥 Extreme (Shrink images 50%)</option>
-    <option value="0.7">✅ Recommended (Shrink images 30%)</option>
-    <option value="1.0">🛡️ Standard (No image scaling)</option>
-         </select>
+    <main class="tool-card">
+        <h2 style="color: #444;">Compress PDF</h2>
+        <p style="color: #666; margin-bottom: 30px;">Optimized for 150MB+ Files</p>
 
-              <div class="drop-zone" onclick="document.getElementById('file-input').click()">
-                    <input type="file" id="file-input" accept=".pdf" hidden>
-                    <button class="huge-action-btn">COMPRESS 150MB PDF</button>
-                    <p>Fast Data Processing • Secure • No Upload</p>
-                </div>
+        <div id="upload-stage">
+            <input type="file" id="file-input" hidden>
+            <button class="btn-main" onclick="document.getElementById('file-input').click()">
+                Select PDF File
+            </button>
+            <div class="ad-space">ADVERTISEMENT</div>
+        </div>
+
+        <div id="process-stage" style="display:none;">
+            <div style="background:#eee; border-radius:10px; height:10px; overflow:hidden; margin: 20px 0;">
+                <div id="bar" style="background:var(--primary-red); width:0%; height:100%; transition:0.4s;"></div>
             </div>
+            <p>Processing on Secure Server...</p>
+            <div class="ad-space" style="height:200px;">MONETIZATION AD</div>
+        </div>
 
-            <!-- AD SPACE IN MIDDLE OF WORKFLOW -->
-            <div id="processing-area" style="display:none;">
-                <div class="loader-container">
-                    <div id="fill-bar"></div>
-                </div>
-                <p id="status-text">Analyzing Data Streams...</p>
-                
-                <div class="ad-unit processing-ad">
-                    <p>Exclusive Offer for You</p>
-                    <!-- Best spot for High CPC ads -->
-                </div>
-            </div>
-
-            <div id="download-area" style="display:none;">
-                <div class="success-box">
-                    <h2 id="final-stats">150MB → 10MB</h2>
-                    <button id="dl-btn" class="huge-success-btn">DOWNLOAD NOW</button>
-                </div>
-            </div>
+        <div id="download-stage" style="display:none;">
+            <p id="stat-result" style="font-weight:bold; color:var(--success-green);"></p>
+            <button id="dl-btn" class="btn-download">Download Compressed PDF</button>
+            <div class="ad-space">ADVERTISEMENT</div>
         </div>
     </main>
-
-    <!-- STICKY FOOTER AD -->
-    <div class="ad-unit footer-sticky">
-        <p>Advertisement</p>
-    </div>
 
     <script src="scrift.js"></script>
 </body>
