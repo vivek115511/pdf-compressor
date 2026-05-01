@@ -3,81 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro PDF Compressor | Compress up to 150MB</title>
-    <!-- Linking the CSS file you renamed to style.css -->
+    <title>Pro PDF Compressor | Extra Small & Fast</title>
     <link rel="stylesheet" href="style.css">
-    <!-- PDF-Lib Library for browser-side compression -->
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 </head>
-<body>
+<body class="toolpage">
 
-    <nav>
-        <div class="nav-container">
-            <strong>ProCompressor</strong>
-        </div>
-    </nav>
+    <header class="header">
+        <strong>ProCompressor</strong>
+    </header>
 
-    <!-- TOP AD SLOT: High visibility for revenue -->
-    <div class="ad-slot banner">
-        <span>Advertisement</span>
-    </div>
+    <div class="ad-slot top-ad">Advertisement</div>
 
-    <main class="container">
-        <div class="tool-box">
+    <main class="main-container">
+        <div class="tool-card">
             <h1>Compress PDF</h1>
-            <p>Secure, fast, and stays in your browser (Max 150MB).</p>
+            <p>Extreme compression for files up to 150MB</p>
 
-            <!-- User Options -->
-            <div class="options">
-                <label for="quality-level">Compression:</label>
+            <!-- Quality Selection - Big and Clear -->
+            <div class="quality-box">
+                <label>Select Compression Strength:</label>
                 <select id="quality-level">
-                    <option value="0.5">Recommended (Best Balance)</option>
-                    <option value="0.2">Extreme (Smallest Size)</option>
-                    <option value="0.8">High Quality (Less Compression)</option>
+                    <option value="extreme">🔥 Extreme (Smallest File)</option>
+                    <option value="recommended" selected>✅ Recommended (Small + Good Quality)</option>
+                    <option value="low">🛡️ Low (High Quality Content)</option>
                 </select>
             </div>
 
-            <!-- Upload Area -->
-            <div class="drop-area" id="drop-area" onclick="document.getElementById('file-input').click()">
+            <!-- THE BIG BUTTON -->
+            <div id="workArea" class="workarea">
                 <input type="file" id="file-input" accept="application/pdf" hidden>
-                <div class="button-primary">Choose 150MB File</div>
-                <p id="file-name-display">or drag and drop here</p>
+                <button class="huge-btn" onclick="document.getElementById('file-input').click()">
+                    CHOOSE PDF FILE
+                </button>
+                <p class="drag-text">or drag and drop here</p>
             </div>
 
-            <!-- Processing/Loading State (Ad window) -->
-            <div id="loading" style="display: none;">
-                <div class="progress-bar-container">
-                    <div id="progress-bar"></div>
-                </div>
-                <p>Optimizing your PDF... please wait.</p>
-                <!-- MID-PROCESS AD SLOT -->
-                <div class="ad-slot rectangle">
-                    <span>Processing Ad</span>
-                </div>
+            <!-- Progress State -->
+            <div id="process" class="process-view" style="display:none;">
+                <div class="loader-bar"><div id="progress-bar"></div></div>
+                <p>Shrinking your file...</p>
+                <div class="ad-slot rectangle-ad">Processing Ad</div>
             </div>
 
-            <!-- Download Result Area -->
-            <div id="result-area" style="display: none;">
-                <div class="success-icon">✓</div>
+            <!-- Result State -->
+            <div id="result" class="result-view" style="display:none;">
+                <div class="status-msg">Success! File Size Reduced</div>
                 <p id="size-report"></p>
-                <button id="download-btn" class="button-success">Download Compressed PDF</button>
+                <button id="download-btn" class="huge-btn-success">DOWNLOAD COMPRESSED PDF</button>
             </div>
         </div>
-
-        <!-- Content Area for SEO & AdSense Approval -->
-        <article class="info-section">
-            <h2>Why use Pro PDF Compressor?</h2>
-            <p>Our tool allows you to compress large PDF files up to 150MB without sending data to a server. This ensures 100% privacy and high-speed processing directly on your device.</p>
-        </article>
     </main>
 
-    <!-- BOTTOM AD SLOT -->
-    <div class="ad-slot banner">
-        <span>Advertisement</span>
-    </div>
+    <div class="ad-slot bottom-ad">Advertisement</div>
 
-    <!-- Linking your script file exactly as named on GitHub -->
     <script src="scrift.js"></script>
-
 </body>
 </html>
