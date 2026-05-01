@@ -1,62 +1,71 @@
-body { background: #f0f2f5; font-family: sans-serif; margin: 0; }
-
-.main-wrapper { display: flex; justify-content: center; padding: 40px 10px; }
-
-.compressor-card {
-    background: white;
-    width: 100%;
-    max-width: 700px;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    text-align: center;
+:root {
+    --primary-red: #e53935;
+    --success-green: #28a745;
 }
 
-/* THE MONETIZATION BUTTON */
-.huge-action-btn {
-    background: #e53935;
-    color: white;
-    font-size: 26px;
-    font-weight: 900;
-    padding: 30px 50px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    box-shadow: 0 10px 0 #b71c1c;
-    width: 100%;
-    margin: 20px 0;
-}
-
-.huge-action-btn:active {
-    box-shadow: 0 2px 0 #b71c1c;
-    transform: translateY(8px);
-}
-
-.big-select {
-    width: 100%;
-    padding: 20px;
-    font-size: 20px;
-    border: 3px solid #e53935;
-    border-radius: 12px;
-}
-
-/* AD UNITS */
-.ad-unit {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    color: #aaa;
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    /* Willow Leaf Pattern */
+    background-color: #fdfdfd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cpath d='M30 80c10-12 18-25 18-40C48 15 30 0 30 0S12 15 12 40c0 15 8 28 18 40z' fill='%234caf50' fill-opacity='0.04'/%3E%3C/svg%3E");
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-weight: bold;
+    align-items: center;
+    min-height: 100vh;
 }
-.banner-top { height: 90px; width: 100%; margin-bottom: 20px; }
-.footer-sticky { position: fixed; bottom: 0; height: 60px; width: 100%; z-index: 100; border-top: 2px solid #e53935; }
-.processing-ad { height: 250px; width: 300px; margin: 20px auto; }
 
-/* LOADING BAR */
-.loader-container { background: #eee; height: 25px; border-radius: 50px; overflow: hidden; }
-#fill-bar { background: #28a745; width: 0%; height: 100%; transition: width 0.5s; }
-   
+.tool-card {
+    background: rgba(255, 255, 255, 0.98);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 550px; /* Narrower for a cleaner look */
+    border-top: 5px solid var(--primary-red);
+}
+
+/* PROFESSIONAL BALANCED BUTTONS */
+.btn-main {
+    background: var(--primary-red);
+    color: white;
+    font-size: 18px; /* Standard Pro Size */
+    font-weight: 600;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-main:hover {
+    background: #c62828;
+}
+
+.btn-download {
+    background: var(--success-green);
+    color: white;
+    font-size: 18px;
+    padding: 18px;
+    border-radius: 8px;
+    border: none;
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* AD SPACES */
+.ad-space {
+    background: #f1f1f1;
+    margin: 20px 0;
+    padding: 15px;
+    color: #999;
+    font-size: 12px;
+    border: 1px solid #eee;
+}
   
     
