@@ -1,14 +1,13 @@
 :root {
-    --primary-red: #e53935;
-    --success-green: #28a745;
+    --primary: #e53935;
 }
 
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
-    /* Willow Leaf Pattern */
-    background-color: #fdfdfd;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='80' viewBox='0 0 60 80'%3E%3Cpath d='M30 80c10-12 18-25 18-40C48 15 30 0 30 0S12 15 12 40c0 15 8 28 18 40z' fill='%234caf50' fill-opacity='0.04'/%3E%3C/svg%3E");
+    /* Highly visible Willow Leaf Pattern */
+    background-color: #e8f5e9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 100C20 70 10 40 10 10c30 0 60 10 90 40-30 30-40 50-50 50z' fill='%234caf50' fill-opacity='0.15'/%3E%3C/svg%3E");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,56 +15,32 @@ body {
 }
 
 .tool-card {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 40px;
+    background: white;
+    padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
     text-align: center;
     width: 90%;
-    max-width: 550px; /* Narrower for a cleaner look */
-    border-top: 5px solid var(--primary-red);
+    max-width: 600px;
 }
 
-/* PROFESSIONAL BALANCED BUTTONS */
+/* THE GOLDILOCKS BUTTON: Big enough to see, not taking up the whole screen */
 .btn-main {
-    background: var(--primary-red);
+    background: var(--primary);
     color: white;
-    font-size: 18px; /* Standard Pro Size */
-    font-weight: 600;
-    padding: 18px 40px;
+    font-size: 22px; 
+    font-weight: bold;
+    padding: 20px 40px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    width: 100%;
-    transition: background 0.3s ease;
+    box-shadow: 0 8px 0 #b71c1c;
+    transition: all 0.1s;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-.btn-main:hover {
-    background: #c62828;
+.btn-main:active {
+    box-shadow: 0 3px 0 #b71c1c;
+    transform: translateY(5px);
 }
-
-.btn-download {
-    background: var(--success-green);
-    color: white;
-    font-size: 18px;
-    padding: 18px;
-    border-radius: 8px;
-    border: none;
-    width: 100%;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* AD SPACES */
-.ad-space {
-    background: #f1f1f1;
-    margin: 20px 0;
-    padding: 15px;
-    color: #999;
-    font-size: 12px;
-    border: 1px solid #eee;
-}
-  
-    
+   
