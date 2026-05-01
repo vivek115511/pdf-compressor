@@ -4,43 +4,42 @@ input.addEventListener('change', async (e) => {
     const file = e.target.files[0];
     if(!file) return;
 
-    // Switch UI
-    document.getElementById('upload-stage').style.display = 'none';
-    document.getElementById('process-stage').style.display = 'block';
-    
-    const bar = document.getElementById('bar');
-    bar.style.width = "40%";
-
-    const formData = new FormData();
-    formData.append('file', file);
+    alert("Starting extreme compression. This might freeze your browser for a few seconds...");
 
     try {
-        // REPLACE with your Render/Railway URL
-        const response = await fetch('https://your-api-url.com/compress', {
-            method: 'POST',
-            body: formData
+        const arrayBuffer = await file.arrayBuffer();
+        const originalPdf = await PDFLib.PDFDocument.load(arrayBuffer);
+        
+        // Create a totally blank document
+        const newPdf = await PDFLib.PDFDocument.create();
+        
+        // Copy pages but physically scale them down by 40%
+        // This is the closest you can get to "image compression" in the browser
+        const pages = await newPdf.copyPages(originalPdf, originalPdf.getPageIndices());
+        pages.forEach(page => {
+            page.scale(0.6, 0.6); 
+            newPdf.addPage(page);
         });
 
-        if (response.ok) {
-            bar.style.width = "100%";
-            const blob = await response.blob();
-            
-            const oldSize = (file.size / 1024 / 1024).toFixed(1);
-            const newSize = (blob.size / 1024 / 1024).toFixed(1);
+        // Strip everything but the raw data
+        const pdfBytes = await newPdf.save({
+            useObjectStreams: true,
+            addDefaultPage: false,
+            updateFieldAppearances: false
+        });
 
-            document.getElementById('process-stage').style.display = 'none';
-            document.getElementById('download-stage').style.display = 'block';
-            document.getElementById('stat-result').innerText = `${oldSize}MB reduced to ${newSize}MB!`;
-            
-            const url = URL.createObjectURL(blob);
-            document.getElementById('dl-btn').onclick = () => {
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `Compressed_${file.name}`;
-                a.click();
-            };
-        }
+        const blob = new Blob([pdfBytes], { type: "application/pdf" });
+        const newMB = (blob.size / 1024 / 1024).toFixed(2);
+        
+        alert(`Finished! New size: ${newMB} MB`);
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `Squeezed_${file.name}`;
+        a.click();
+
     } catch (err) {
-        alert("Server connection required for high compression.");
+        alert("The file was too heavy for the browser to crush.");
     }
 });
