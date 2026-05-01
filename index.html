@@ -1,0 +1,33 @@
+<!-- Replace the tool-box section in your index.html with this -->
+<section class="tool-box">
+    <h1>Pro PDF Compressor</h1>
+    <p>Limit: 150MB per file</p>
+
+    <div class="options">
+        <label>Compression Level:</label>
+        <select id="quality-level">
+            <option value="0.5">Recommended (Good Quality)</option>
+            <option value="0.2">Extreme (Smallest Size)</option>
+            <option value="0.8">Less (High Quality)</option>
+        </select>
+    </div>
+
+    <div class="drop-area" id="drop-area">
+        <input type="file" id="file-input" accept="application/pdf" hidden>
+        <label for="file-input" class="button-primary">Choose 150MB File</label>
+        <div id="file-info"></div>
+    </div>
+
+    <div id="loading" style="display: none;">
+        <div class="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p>Optimizing large document... this may take a minute.</p>
+        <!-- AD UNIT HERE -->
+    </div>
+
+    <div id="result-area" style="display: none;">
+        <p id="size-report"></p>
+        <button id="download-btn" class="button-success">Download Compressed PDF</button>
+    </div>
+</section>
