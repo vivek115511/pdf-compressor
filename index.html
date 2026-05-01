@@ -3,59 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pro PDF Compressor | Extra Small & Fast</title>
+    <title>ZipPDF | Ultra-Fast 150MB Compressor</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
 </head>
-<body class="toolpage">
+<body>
+    <!-- TOP BANNER AD -->
+    <div class="ad-unit banner-top">
+        <p>SPONSORED AD</p>
+        <!-- Paste AdSense Code Here -->
+    </div>
 
-    <header class="header">
-        <strong>ProCompressor</strong>
-    </header>
-
-    <div class="ad-slot top-ad">Advertisement</div>
-
-    <main class="main-container">
-        <div class="tool-card">
-            <h1>Compress PDF</h1>
-            <p>Extreme compression for files up to 150MB</p>
-
-            <!-- Quality Selection - Big and Clear -->
-            <div class="quality-box">
-                <label>Select Compression Strength:</label>
-                <select id="quality-level">
-                    <option value="extreme">🔥 Extreme (Smallest File)</option>
-                    <option value="recommended" selected>✅ Recommended (Small + Good Quality)</option>
-                    <option value="low">🛡️ Low (High Quality Content)</option>
+    <main class="main-wrapper">
+        <div class="compressor-card">
+            <h1>Ultra PDF Compressor</h1>
+            
+            <div id="setup-area">
+                <select id="target-size" class="big-select">
+                    <option value="10">Target: ~10MB (Extreme)</option>
+                    <option value="25">Target: ~25MB (Small)</option>
+                    <option value="100">Target: ~100MB (Standard)</option>
                 </select>
+
+                <div class="drop-zone" onclick="document.getElementById('file-input').click()">
+                    <input type="file" id="file-input" accept=".pdf" hidden>
+                    <button class="huge-action-btn">COMPRESS 150MB PDF</button>
+                    <p>Fast Data Processing • Secure • No Upload</p>
+                </div>
             </div>
 
-            <!-- THE BIG BUTTON -->
-            <div id="workArea" class="workarea">
-                <input type="file" id="file-input" accept="application/pdf" hidden>
-                <button class="huge-btn" onclick="document.getElementById('file-input').click()">
-                    CHOOSE PDF FILE
-                </button>
-                <p class="drag-text">or drag and drop here</p>
+            <!-- AD SPACE IN MIDDLE OF WORKFLOW -->
+            <div id="processing-area" style="display:none;">
+                <div class="loader-container">
+                    <div id="fill-bar"></div>
+                </div>
+                <p id="status-text">Analyzing Data Streams...</p>
+                
+                <div class="ad-unit processing-ad">
+                    <p>Exclusive Offer for You</p>
+                    <!-- Best spot for High CPC ads -->
+                </div>
             </div>
 
-            <!-- Progress State -->
-            <div id="process" class="process-view" style="display:none;">
-                <div class="loader-bar"><div id="progress-bar"></div></div>
-                <p>Shrinking your file...</p>
-                <div class="ad-slot rectangle-ad">Processing Ad</div>
-            </div>
-
-            <!-- Result State -->
-            <div id="result" class="result-view" style="display:none;">
-                <div class="status-msg">Success! File Size Reduced</div>
-                <p id="size-report"></p>
-                <button id="download-btn" class="huge-btn-success">DOWNLOAD COMPRESSED PDF</button>
+            <div id="download-area" style="display:none;">
+                <div class="success-box">
+                    <h2 id="final-stats">150MB → 10MB</h2>
+                    <button id="dl-btn" class="huge-success-btn">DOWNLOAD NOW</button>
+                </div>
             </div>
         </div>
     </main>
 
-    <div class="ad-slot bottom-ad">Advertisement</div>
+    <!-- STICKY FOOTER AD -->
+    <div class="ad-unit footer-sticky">
+        <p>Advertisement</p>
+    </div>
 
     <script src="scrift.js"></script>
 </body>
